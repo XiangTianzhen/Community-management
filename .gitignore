@@ -38,4 +38,7 @@ coverage
 
 # Cache
 .cache
-.temp 
+.temp
+
+# Rules directory
+.cursor/rules 
