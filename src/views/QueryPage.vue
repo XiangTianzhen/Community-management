@@ -31,15 +31,8 @@
             <!-- 顶部Logo和标题 -->
             <div class="certificate-header">
               <div class="school-logo">
-                <div class="logo-circle">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="36" height="36" fill="#ffffff">
-                    <path d="M12 3L1 9L5 11.18V17.18L12 21L19 17.18V11.18L21 10.09V17H23V9L12 3ZM18.82 9L12 12.72L5.18 9L12 5.28L18.82 9ZM17 15.99L12 18.72L7 15.99V12.27L12 15L17 12.27V15.99Z"/>
-                  </svg>
-                </div>
-                <div class="school-title">
-                  <div class="school-name-cn">重庆建筑工程职业学院</div>
-                  <div class="school-name-en">CHONGQING JIANZHU COLLEGE</div>
-                </div>
+                  <img src="@/assest/images/logo.png" alt="学校logo" class="logo-image" />
+
               </div>
             </div>
             
@@ -75,13 +68,7 @@
             
             <!-- 印章，放置在整个卡片的最上层 -->
             <div class="school-seal">
-              <svg viewBox="0 0 100 100" width="100" height="100" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="50" cy="50" r="45" fill="none" stroke="#ff5252" stroke-width="2" />
-                <circle cx="50" cy="50" r="40" fill="none" stroke="#ff5252" stroke-width="1" />
-                <text x="50" y="50" font-size="12" text-anchor="middle" fill="#ff5252">重庆建筑工程</text>
-                <text x="50" y="65" font-size="12" text-anchor="middle" fill="#ff5252">职业学院</text>
-                <path d="M50 15 L53 25 L45 20 L55 20 L47 25 Z" fill="#ff5252" />
-              </svg>
+              <img src="@/assest/images/zhang.png" alt="学校logo" class="logo-image" />
             </div>
           </div>
           
@@ -256,20 +243,27 @@ input {
 
 /* 新样式社团证 */
 .certificate-card {
+  //大小
   width: 100%;
   aspect-ratio: 3/4;
   max-width: 400px;
   margin: 0 auto;
-  background: linear-gradient(to bottom, #1e88e5, #1565c0);
+
+  //图片
+  background: url('@/assest/images/beijing.png');
   background-size: cover;
-  border-radius: 12px;
+  background-position: center;
+  
   overflow: hidden;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-  color: #fff;
+  color: #000;
+
   position: relative;
   display: flex;
   flex-direction: column;
+  
   padding: 20px;
+  font-family: "STXingkai", "黑体", cursive;
 }
 
 .certificate-header {
@@ -283,24 +277,26 @@ input {
   display: flex;
   align-items: center;
   
-  img {
-    width: 60px;
-    height: 60px;
-    object-fit: contain;
-    margin-right: 15px;
-  }
+
 }
 
 .logo-circle {
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  background-color: #1565c0;
+  background-color: #fff;
   display: flex;
   justify-content: center;
   align-items: center;
   margin-right: 15px;
-  border: 2px solid rgba(255, 255, 255, 0.7);
+  border: 2px solid rgba(0, 0, 0, 0.7);
+  overflow: hidden;
+}
+
+.logo-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .school-title {
@@ -311,11 +307,13 @@ input {
   font-size: 20px;
   font-weight: bold;
   margin-bottom: 5px;
+  text-shadow: 0 0 4px rgba(255, 255, 255, 0.8);
 }
 
 .school-name-en {
   font-size: 12px;
   opacity: 0.9;
+  text-shadow: 0 0 4px rgba(255, 255, 255, 0.8);
 }
 
 .certificate-body {
@@ -348,29 +346,35 @@ input {
   padding: 0 20px;
   max-width: 350px;
   margin: 0 auto;
+  font-family: "STXingkai", "黑体", cursive;
 }
 
 .info-item {
   margin-bottom: 15px;
-  font-size: 18px;
+  font-size: 24px;
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  font-family: "STXingkai", "黑体", cursive;
 }
 
 .info-label {
   font-weight: bold;
   text-align: left;
-  width: 20%;
+  width: 30%;
   margin-left: 20px;
+  text-shadow: 0 0 4px rgba(255, 255, 255, 0.8);
+  font-family: "STXingkai", "黑体", cursive;
 }
 
 .info-value {
   font-weight: 500;
-  width: 60%;
+  width: 55%;
   text-align: center;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.7);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.7);
   padding-bottom: 5px;
+  text-shadow: 0 0 4px rgba(255, 255, 255, 0.8);
+  font-family: "STXingkai", "黑体", cursive;
 }
 
 .certificate-footer {
@@ -413,9 +417,21 @@ input {
   position: absolute;
   right: 20px;
   bottom: 40px;
-  transform: rotate(15deg);
+  transform: rotate(10deg);
   opacity: 0.8;
   z-index: 10;
+  img{
+    width: 180px;
+    height: 180px;
+  }
+}
+
+.school-seal svg text, .school-seal svg path {
+  fill: #000;
+}
+
+.school-seal svg circle {
+  stroke: #000;
 }
 
 @media (max-width: 768px) {
